@@ -66,5 +66,18 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+/*
+  function to generate the password. Using the passwordLength value as input, the function will generate a password with the same number of characters. To select the characters randomly, the function will use the math function to generate a number between 0 and the length of charSet. It will then append the character in the charSet at the random number location to the password. 
+  input: passwordLength: the length of the password to be generated
+  returns: the generated password
+*/ 
+function generatePassword(passwordLength) {
+  let password = "";
+  for (let i = 0; i < passwordLength; i++) {
+    password = password += charSet.charAt(getRandomInt(charSet.length));
+  }
+  return password;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
