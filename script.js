@@ -16,7 +16,7 @@ function writePassword() {
   until a valid password length is submitted
   parameters: none
   return: passwordLength a number between 8-128
-  */
+*/
   function capturePasswordLength() {
     let passwordLength = prompt('Enter the number of characters');
     while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
@@ -26,7 +26,38 @@ function writePassword() {
     return passwordLength;
   }
 
-  /*
+/*
+  function to capture the type of characters allowed in the password. It will prompt
+  the user using confirm() to include the desired character set. Once done with the prompts, the charSet string will be updated to include the desired characters. If no character sets are selected, all of the them will be included. Valid character sets are: 
+    1. Capital letters
+    2. Small letters
+    3. Numbers
+    4. Special characters
+  parameters: none
+  return: none
+*/
+function captureCharacterSet() {
+  //reset charSet so that when generating more than one password, the charSet will be updated
+  charSet = "";
+  if (confirm('Do you want to use capital letters?')) {
+    charSet += capitalLetters;
+  }
+  if (confirm('Do you want ot use small letters?')) {
+    charSet += smallLetters;
+  }
+  if (confirm('Do you want to use numbers?')) {
+    charSet += numbers;
+  }
+  if (confirm('Do you want to use special chars?')) {
+    charSet += specialChars;
+  }
+  if (charSet === "") {
+    alert('You did not select any type. Defaulting to all characters');
+    charSet = capitalLetters + smallLetters + numbers + specialChars;
+  }
+}
+
+/*
   Random number generator. It will return a value between 0 and max. 
   input: max - the maximum number to be generated
   return: a number between 0 and max
