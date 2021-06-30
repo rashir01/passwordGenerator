@@ -21,7 +21,7 @@ The user can sepcify which sets of characters are to be used in the password. Th
 The application will print the generated password to the password area in the application
 
 ## Execution 
-The application is found at the following URL 
+The application is found at the [following URL](https://rashir01.github.io/passwordGenerator/) 
 
 ## Screen Shot
 The image below demonstrates a password that is generated using the application
