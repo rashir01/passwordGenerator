@@ -10,5 +10,14 @@ function writePassword() {
 
 }
 
+/*
+  Random number generator. It will return a value between 0 and max. 
+  input: max - the maximum number to be generated
+  return: a number between 0 and max
+*/
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
