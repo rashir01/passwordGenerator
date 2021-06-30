@@ -1,13 +1,29 @@
-// Assignment Code
+//constant strings to hold the different types of allowed characters
+const capitalLetters = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
+const smallLetters = "abcdefghijklmnopqrstuvwxyz";
+const numbers = "1234567890";
+const specialChars = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+
 var generateBtn = document.querySelector("#generate");
+
+var charSet = "";
+var passwordLength;
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  
+  // capture the number of characters
+  passwordLength = capturePasswordLength();
+  
+  //capture character set
+  captureCharacterSet();
 
-  passwordText.value = password;
+  //generate the password
+  var password = generatePassword(passwordLength);
 
+  //set the text content of the password text area to the generated password
+  passwordText.textContent = password;
 }
 
 /*
